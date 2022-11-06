@@ -15,9 +15,9 @@ def ler_dados_acelerometro(caminho: str, nome_raiz: str, variaveis_sensor: Varia
 
         variaveis_sensor.set_tempo(tempo=dados["Time"])
 
-        variaveis_sensor.set_dados_eixo_x(dados_x=dados[variaveis_sensor.x])
-        variaveis_sensor.set_dados_eixo_y(dados_y=dados[variaveis_sensor.y])
-        variaveis_sensor.set_dados_eixo_z(dados_z=dados[variaveis_sensor.z])
+        variaveis_sensor.set_dados_eixo_x(dados_x=dados[variaveis_sensor.x].tolist())
+        variaveis_sensor.set_dados_eixo_y(dados_y=dados[variaveis_sensor.y].tolist())
+        variaveis_sensor.set_dados_eixo_z(dados_z=dados[variaveis_sensor.z].tolist())
 
         return variaveis_sensor
     except Exception as e:

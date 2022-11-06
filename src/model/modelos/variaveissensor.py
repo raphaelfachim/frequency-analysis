@@ -3,11 +3,10 @@ import re
 
 class VariaveisSensor:
 
-    def __init__(self, var_x, var_y, var_z, taxa_amostragem):
+    def __init__(self, var_x, var_y, var_z):
         self.x = var_x
         self.y = var_y
         self.z = var_z
-        self.taxa_amostragem = taxa_amostragem
 
     def set_tempo(self, tempo):
         tempo_float = []
