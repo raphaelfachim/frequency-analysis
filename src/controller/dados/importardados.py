@@ -4,8 +4,6 @@ from src.model.modelos.variaveissensor import VariaveisSensor
 
 
 def ler_dados_acelerometro(caminho: str, nome_raiz: str, variaveis_sensor: VariaveisSensor):
-    cabecalho = []
-
     variaveis_sensor.x = nome_raiz + "_" + variaveis_sensor.x
     variaveis_sensor.y = nome_raiz + "_" + variaveis_sensor.y
     variaveis_sensor.z = nome_raiz + "_" + variaveis_sensor.z
