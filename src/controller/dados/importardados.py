@@ -11,9 +11,15 @@ def ler_dados_acelerometro(caminho: str, nome_raiz: str, variaveis_sensor: Varia
         dados = pd.read_csv(caminho)
 
         variaveis_sensor.set_tempo(tempo=dados["Time"])
-        variaveis_sensor.set_dados_eixo_x(dados_x=dados[dados_x].tolist())
-        variaveis_sensor.set_dados_eixo_y(dados_y=dados[dados_y].tolist())
-        variaveis_sensor.set_dados_eixo_z(dados_z=dados[dados_z].tolist())
+        if variaveis_sensor.x:
+            print("Setando eixo x")
+            variaveis_sensor.set_dados_eixo_x(dados_x=dados[dados_x].tolist())
+        if variaveis_sensor.y:
+            print("Setando eixo y")
+            variaveis_sensor.set_dados_eixo_y(dados_y=dados[dados_y].tolist())
+        if variaveis_sensor.z:
+            print("Setando eixo z")
+            variaveis_sensor.set_dados_eixo_z(dados_z=dados[dados_z].tolist())
 
         return variaveis_sensor
     except Exception as e:

@@ -11,7 +11,7 @@ class VariaveisSensor:
     def set_tempo(self, tempo):
         tempo_float = []
         for t in tempo:
-            tempo_float.append(float(re.sub("[^\d\.]", "", t)))
+            tempo_float.append(float(re.sub(" sec", "", t)))
 
         self.tempo = tempo_float
 

@@ -17,7 +17,7 @@ if __name__ == '__main__':
     acel_2 = VariaveisSensor("ai10", "ai11", "ai12")
     nome_raiz = "Dev4"
     amostra = 7
-    limite = 16
+    limite = 7
 
     os.makedirs(timestamp)
 
@@ -41,13 +41,13 @@ if __name__ == '__main__':
         plt.plot(f, espectro, f_2, espectro_2)
         plt.scatter(max_x, max_y, color="r", s=15, marker="D", label="Maximos")
         plt.scatter(max_x_2, max_y_2, color="g", s=15, marker="D", label="Maximos")
-        plt.title("FFT dos sinais coletados perto (azul) e longe (amarelo) do sensor")
+        plt.title("FFT dos sinais coletados perto (azul) e longe (laranja)")
 
         nome_figura = "C:\\Users\\rafas\\Desktop\\frequency-analysis\\{0}\\amostra-{1}.{2}".format(timestamp,
                                                                                                    str(amostra), "png")
 
-        conteudo += "Arquivo da amostra : [{0}] \nPicos de frequência [Hz] = {1}\n" \
-                    "Picos de frequência (acelerômetro distante)[Hz] = {2}\n\n".format(amostra, max_x, max_x_2)
+        conteudo += "Arquivo da amostra : [{0}] \nPicos de frequência [Hz] = \n{1}\n" \
+                    "Picos de frequência (acelerômetro distante)[Hz] = \n{2}\n\n".format(amostra, max_x, max_x_2)
 
         # nome_figura = nome_figura.replace(" ", "-")
 
