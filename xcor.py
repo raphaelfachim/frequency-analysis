@@ -9,7 +9,7 @@ def main():
     sensor2 = Sensor("", "ai1", "")
 
     # caminho = "C:\\Users\\raphael.fachim\\Desktop\\frequency-analysis\\src\\model\\data-09-05\\osciloscopio\\acquisitionDataRaphaelOsciloscopioSQW.txt"
-    caminho = "C:\\Users\\raphael.fachim\\Desktop\\frequency-analysis\\src\\model\\data-09-05\\20cm\\eixoZdist20cm_3.txt"
+    caminho = "C:\\Users\\raphael.fachim\\Desktop\\frequency-analysis\\src\\model\\data-11-05\\166cm-50kSas\\eixoZdist166cmapoios350kSas_3.txt"
     nome_raiz = "Dev1"
 
     sensor1 = importar.ler_dados_acelerometro(caminho, nome_raiz, sensor1)
@@ -77,8 +77,8 @@ def remover_dc(vetor: np.array, dc: float):
         return np.subtract(vetor, media)
 
 def normalizar(vetor: np.array):
-    print(f"maximo : {np.max(vetor)}")
-    return vetor / np.max(vetor)
+    print(f"maximo : {np.max(np.abs(vetor))}")
+    return vetor / np.max(np.abs(vetor))
 
 
 if __name__ == "__main__":
