@@ -21,7 +21,7 @@ def butter_lowpass_filter(data, fcut, fs, order=5):
     return y
 
 def main():
-    caminho = "C:\\Users\\rafas\\Desktop\\frequency-analysis\\src\\model\\data-15-12\\Dev4_24.txt"
+    caminho = "C:\\Users\\raphael.fachim\\Desktop\\frequency-analysis\\src\\model\\data-15-12\\Dev4_24.txt"
     nome_raiz = "Dev4"
 
     # x : ai2, ai10
@@ -39,16 +39,16 @@ def main():
     sensor1.dados_y = [x - sensor1.y_dc for x in sensor1.dados_y]
     sensor2.dados_y = [x - sensor2.y_dc for x in sensor2.dados_y]
 
-    t1 = 5.8    # segundos
-    t2 = 8  # segundos
+    # t1 = 5.8    # segundos
+    # t2 = 8  # segundos
 
     # 100 k Sa/s
     # 1 s -> 100 000 amostras -> 1e5 amostras
 
-    t_novo = sensor1.tempo[int(t1 * 1e5): int(t2 * 1e5)]
+    # t_novo = sensor1.tempo[int(t1 * 1e5): int(t2 * 1e5)]
 
-    sensor1.dados_y = sensor1.dados_y[int(t1 * 1e5): int(t2 * 1e5)]
-    sensor2.dados_y = sensor2.dados_y[int(t1 * 1e5): int(t2 * 1e5)]
+    # sensor1.dados_y = sensor1.dados_y[int(t1 * 1e5): int(t2 * 1e5)]
+    # sensor2.dados_y = sensor2.dados_y[int(t1 * 1e5): int(t2 * 1e5)]
 
     low = 160
     high = 400
@@ -59,7 +59,7 @@ def main():
     #                            sensor2.get_taxa_amostragem(), order=5)
 
     plt.figure(1)
-    plt.plot(t_novo, sensor1.dados_y, t_novo, sensor2.dados_y)
+    plt.plot(sensor1.tempo, sensor1.dados_y, sensor1.tempo, sensor2.dados_y)
     plt.legend(["Acelerômetro próximo", "Acelerômetro distante"])
     plt.title("Analise no tempo sensores")
 

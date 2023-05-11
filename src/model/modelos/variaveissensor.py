@@ -9,11 +9,12 @@ class VariaveisSensor:
         self.z = var_z
 
     def set_tempo(self, tempo):
-        tempo_float = []
-        for t in tempo:
-            tempo_float.append(float(re.sub(" sec", "", t)))
+        # tempo_float = []
+        # for t in tempo:
+        #     tempo_float.append(float(re.sub(" sec", "", t)))
 
-        self.tempo = tempo_float
+        # self.tempo = tempo_float
+        self.tempo = tempo / 1000
 
     def set_dados_eixo_x(self, dados_x):
         self.dados_x = dados_x

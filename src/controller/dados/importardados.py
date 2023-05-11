@@ -3,13 +3,12 @@ from src.model.modelos.variaveissensor import VariaveisSensor
 
 
 def ler_dados_acelerometro(caminho: str, nome_raiz: str, variaveis_sensor: VariaveisSensor):
-    dados_x = nome_raiz + "_" + variaveis_sensor.x
-    dados_y = nome_raiz + "_" + variaveis_sensor.y
-    dados_z = nome_raiz + "_" + variaveis_sensor.z
+    dados_x = nome_raiz + "/" + variaveis_sensor.x
+    dados_y = nome_raiz + "/" + variaveis_sensor.y
+    dados_z = nome_raiz + "/" + variaveis_sensor.z
 
     try:
-        dados = pd.read_csv(caminho)
-
+        dados = pd.read_csv(caminho, sep="\t")
         variaveis_sensor.set_tempo(tempo=dados["Time"])
         if variaveis_sensor.x:
             variaveis_sensor.set_dados_eixo_x(dados_x=dados[dados_x].tolist())
